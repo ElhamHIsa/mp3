@@ -158,7 +158,7 @@ router.delete('/:id', async (req, res) => {
     }
     await task.deleteOne();
 
-    return reply(res, 200, 'Task deleted.', task);
+    return res.status(204).send();
   } catch (err) {
     return reply(res, 500, 'Something went wrong while deleting the task.');
   }
